@@ -355,5 +355,6 @@
                 return content;
             }
         });
+        function test()
 </script>
 @endsection
