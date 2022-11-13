@@ -189,7 +189,6 @@
                     'is_open'           :   $("#is_open").val(),
                 };
 
-                console.log(danhMuc);
 
                 $.ajax({
                     url     :   '/admin/danh-muc/index',
@@ -355,6 +354,5 @@
                 return content;
             }
         });
-        function test()
 </script>
 @endsection

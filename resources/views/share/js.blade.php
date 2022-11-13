@@ -13,7 +13,7 @@
 <script src="/assets_admin/js/config.js"></script>
 <!-- Plugins JS start-->
 <script src="/assets_admin/js/sidebar-menu.js"></script>
-<script src="/assets_admin/js/chart/chartist/chartist.js"></script>
+{{-- <script src="/assets_admin/js/chart/chartist/chartist.js"></script>
 <script src="/assets_admin/js/chart/chartist/chartist-plugin-tooltip.js"></script>
 <script src="/assets_admin/js/chart/knob/knob.min.js"></script>
 <script src="/assets_admin/js/chart/knob/knob-chart.js"></script>
@@ -21,15 +21,15 @@
 <script src="/assets_admin/js/chart/apex-chart/stock-prices.js"></script>
 <script src="/assets_admin/js/notify/bootstrap-notify.min.js"></script>
 <script src="/assets_admin/js/dashboard/default.js"></script>
-<script src="/assets_admin/js/notify/index.js"></script>
-<script src="/assets_admin/js/datepicker/date-picker/datepicker.js"></script>
+<script src="/assets_admin/js/notify/index.js"></script> --}}
+{{-- <script src="/assets_admin/js/datepicker/date-picker/datepicker.js"></script>
 <script src="/assets_admin/js/datepicker/date-picker/datepicker.en.js"></script>
-<script src="/assets_admin/js/datepicker/date-picker/datepicker.custom.js"></script>
-<script src="/assets_admin/js/typeahead/handlebars.js"></script>
-<script src="/assets_admin/js/typeahead/typeahead.bundle.js"></script>
-<script src="/assets_admin/js/typeahead/typeahead.custom.js"></script>
-<script src="/assets_admin/js/typeahead-search/handlebars.js"></script>
-<script src="/assets_admin/js/typeahead-search/typeahead-custom.js"></script>
+<script src="/assets_admin/js/datepicker/date-picker/datepicker.custom.js"></script> --}}
+{{-- <script src="/assets_admin/js/typeahead/handlebars.js"></script> --}}
+{{-- <script src="/assets_admin/js/typeahead/typeahead.bundle.js"></script> --}}
+{{-- <script src="/assets_admin/js/typeahead/typeahead.custom.js"></script> --}}
+{{-- <script src="/assets_admin/js/typeahead-search/handlebars.js"></script>
+<script src="/assets_admin/js/typeahead-search/typeahead-custom.js"></script> --}}
 <!-- Plugins JS Ends-->
 <!-- Theme js-->
 <script src="/assets_admin/js/script.js"></script>
