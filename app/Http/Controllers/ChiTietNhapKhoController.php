@@ -84,7 +84,7 @@ class ChiTietNhapKhoController extends Controller
                 'id_san_pham'    =>  $sanPham->id,
                 'ten_san_pham'   =>  $sanPham->ten_san_pham,
                 'so_luong_nhap'  =>  1,
-                'don_gia_nhap'   =>  $sanPham->don_gia_ban * 0.7,
+                'don_gia_nhap'   =>  $sanPham->don_gia_ban,
             ]);
         }
     }

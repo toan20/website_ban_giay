@@ -325,6 +325,8 @@
                             $("#createSanPham").prop('disabled', true);
                         } else {
                             $("#message_ma_san_pham").text("Mã sản phẩm có thể tạo!");
+                            $("#message_ma_san_pham").addClass("text-primary")
+                            $("#message_ma_san_pham").removeClass("text-danger");
                             $("#ma_san_pham").removeClass("border border-danger");
                             $("#ma_san_pham").addClass("border border-primary");
                             $("#createSanPham").prop('disabled', false);
