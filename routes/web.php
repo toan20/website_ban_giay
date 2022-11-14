@@ -26,4 +26,21 @@ Route::group(['prefix' => '/admin'], function() {
         Route::get('/destroy/{id}', [\App\Http\Controllers\SanPhamController::class, 'destroy']);
         Route::get('/auto-complete', [\App\Http\Controllers\SanPhamController::class, 'autoComplete']);
     });
+    Route::group(['prefix' => '/nhap-kho'], function() {
+        Route::get('/index', [\App\Http\Controllers\ChiTietNhapKhoController::class, 'index']);
+
+        Route::get('/data', [\App\Http\Controllers\ChiTietNhapKhoController::class, 'getData']);
+
+        Route::post('/create', [\App\Http\Controllers\ChiTietNhapKhoController::class, 'store']);
+        Route::post('/delete', [\App\Http\Controllers\ChiTietNhapKhoController::class, 'destroy']);
+        Route::post('/update', [\App\Http\Controllers\ChiTietNhapKhoController::class, 'update']);
+        Route::post('/updatePrice', [\App\Http\Controllers\ChiTietNhapKhoController::class, 'updatePrice']);
+        Route::get('/lich-su', [\App\Http\Controllers\HoaDonNhapKhoController::class, 'history']);
+    });
+    Route::group(['prefix' => '/hoa-don-nhap-kho'], function() {
+        Route::get('/create', [\App\Http\Controllers\HoaDonNhapKhoController::class, 'store']);
+        Route::get('/detail/{id_hoa_don}', [\App\Http\Controllers\HoaDonNhapKhoController::class, 'detail']);
+        Route::get('/thong-ke', [\App\Http\Controllers\HoaDonNhapKhoController::class, 'analytic']);
+        Route::post('/thong-ke', [\App\Http\Controllers\HoaDonNhapKhoController::class, 'analyticPost'])->name('postThongKeNhapKho');
+    });
 });

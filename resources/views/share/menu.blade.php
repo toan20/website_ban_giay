@@ -24,6 +24,16 @@
                <a href="/admin/san-pham/index">Quản Lý Sản Phẩm</a>
               </div>
             </li>
+            <li class="sidebar-main-title">
+                <div>
+                 <a href="/admin/nhap-kho/index">Quản Lý Nhập Kho</a>
+                </div>
+              </li>
+              <li class="sidebar-main-title">
+                <div>
+                 <a href="/admin/hoa-don-nhap-kho/thong-ke">Thống kê hóa đơn nhập kho</a>
+                </div>
+              </li>
         </div>
       </nav>
     </div>

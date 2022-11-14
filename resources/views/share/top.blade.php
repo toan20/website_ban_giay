@@ -6,7 +6,7 @@
                   <div class="mode"><i class="fa fa-moon-o"></i></div>
                 </li>
                 <li class="profile-nav onhover-dropdown p-0 me-0">
-                  <div class="media profile-media"><img class="b-r-10" src="/assets_admin/images/dashboard/profile.jpg" alt="">
+                  <div class="media profile-media"><img class="b-r-10" src="" alt="">
                     <div class="media-body"><span>Toàn</span>
                       <p class="mb-0 font-roboto">Admin</p>
                     </div>

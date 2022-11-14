@@ -114,23 +114,23 @@
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                          <h5 class="modal-title" id="exampleModalLabel">Cập Nhật Sản Phẩm</h5>
                           <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <input type="text" id="id_san_pham_edit" hidden>
                             <div class="mb-3">
-                                <label class="form-label">Mã Danh Mục</label>
+                                <label class="form-label">Mã Sản Phẩm</label>
                                 <input class="form-control" id="ma_san_pham_edit" name="ma_san_pham" type="text"
-                                    placeholder="Nhập vào mã danh mục sản phẩm">
+                                    placeholder="Nhập vào mã Sản Phẩm sản phẩm">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Tên Danh Mục</label>
+                                <label class="form-label">Tên Sản Phẩm</label>
                                 <input class="form-control" id="ten_san_pham_edit" name="ten_san_pham" type="text"
-                                    placeholder="Nhập vào tên danh mục sản phẩm">
+                                    placeholder="Nhập vào tên Sản Phẩm sản phẩm">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Slug Danh Mục</label>
+                                <label class="form-label">Slug Sản Phẩm</label>
                                 <input class="form-control" id="slug_san_pham_edit" name="slug_san_pham" type="text"
                                     placeholder="Nhập vào slug danh mục sản phẩm">
                             </div>
@@ -144,17 +144,17 @@
                             <div class="mb-3">
                                 <label class="form-label">Giá bán</label>
                                 <input class="form-control" id="don_gia_ban_edit" name="don_gia_ban" type="text"
-                                    placeholder="Nhập vào slug danh mục sản phẩm">
+                                    placeholder="Nhập vào Giá  sản phẩm">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Giá Khuyến Mãi</label>
                                 <input class="form-control" id="don_gia_khuyen_mai_edit" name="don_gia_khuyen_mai" type="text"
-                                    placeholder="Nhập vào slug danh mục sản phẩm">
+                                    placeholder="Nhập vào giá khuyến mãi">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Hình ảnh</label>
-                                <input type = "file" class="form-control" id="hinh_anh_edit" name="hinh_anh" type="text"
-                                    placeholder="Nhập vào slug danh mục sản phẩm">
+                                <input type = "" class="form-control" id="hinh_anh_edit" name="hinh_anh" type="text"
+                                    placeholder="Nhập vào hình ảnh sản phẩm">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Danh Mục</label>
@@ -165,12 +165,12 @@
                             <div class="mb-3">
                                 <label class="form-label">Mô tả ngắn</label>
                                 <input class="form-control" id="mo_ta_ngan_edit" name="mo_ta_ngan" type="text"
-                                    placeholder="Nhập vào slug danh mục sản phẩm">
+                                    placeholder="Nhập vào mô tả ngắn">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Mô tả chi tiết</label>
                                 <input class="form-control" id="mo_ta_chi_tiet_edit" name="mo_ta_chi_tiet" type="text"
-                                    placeholder="Nhập vào slug danh mục sản phẩm">
+                                    placeholder="Nhập vào mô tả chi tiết">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -184,7 +184,7 @@
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                          <h5 class="modal-title" id="exampleModalLabel">Xóa Sản Phẩm</h5>
                           <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -344,11 +344,10 @@
                     url     :   '/admin/san-pham/data',
                     type    :   'get',
                     success :   function(res) {
-                        var listSanPham = res.listSanPham; // 1 array
+                        var listSanPham = res.listSanPham;
 
                         var contentTable = '';
                         $.each(listSanPham, function(key, value) {
-                            console.log(value.hinh_anh);
                             contentTable += '<tr class="align-middle">';
                             contentTable += '<th class="text-center">'+ (key + 1) +'</th>';
                             contentTable += '<td class="text-nowrap">'+ value.ma_san_pham +'</td>';
@@ -445,7 +444,7 @@
                     'don_gia_khuyen_mai'  :   $('#don_gia_khuyen_mai_edit').val(),
                     'hinh_anh'            :   $('#hinh_anh_edit').val(),
                     'mo_ta_ngan'          :   $('#mo_ta_ngan_edit').val(),
-                    'mo_ta_chi_tiet'      :   $('#mo_ta_chi_tiet_edit').val()
+                    'mo_ta_chi_tiet'      :   $('#mo_ta_chi_tiet_edit').val(),
                 };
 
                 $.ajax({
