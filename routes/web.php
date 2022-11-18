@@ -44,3 +44,4 @@ Route::group(['prefix' => '/admin'], function() {
         Route::post('/thong-ke', [\App\Http\Controllers\HoaDonNhapKhoController::class, 'analyticPost'])->name('postThongKeNhapKho');
     });
 });
+

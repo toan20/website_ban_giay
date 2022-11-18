@@ -56,9 +56,8 @@
                     <div class="mb-3">
                         <label class="form-label">Hình Ảnh</label>
                         <div class="input-group">
-                            <input id="hinh_anh" class="form-control" type="file" name="filepath">
+                            <input  id="hinh_anh" class="form-control" type="file" name="file_name">
                          </div>
-                        <div id="holder" style="margin-top:15px;max-height:100px;"> </div>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -87,7 +86,6 @@
     </div>
 </div>
 <div class="row">
-    {{-- Danh Sách Sản Phẩm --}}
     <div class="card">
         <div class="card-header">
             <h5>Danh Sách Sản Phẩm</h5>
@@ -210,16 +208,6 @@
 @endsection
 @section('js')
     <script src="https://cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>
-    <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
-    <script>
-        $('.lfm').filemanager('image', {prefix: '/laravel-filemanager'});
-        var options = {
-            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
-            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
-        };
-    </script>
     <script>
         $(document).ready(function(){
             CKEDITOR.replace('mo_ta_chi_tiet');
@@ -228,6 +216,10 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
+            function formatNumber(number)
+            {
+                return new Intl.NumberFormat('vi-VI', { style: 'currency', currency: 'VND' }).format(number);
+            }
             function converToSlug(str) {
                 str = str.toLowerCase();
 
@@ -347,7 +339,6 @@
                     type    :   'get',
                     success :   function(res) {
                         var listSanPham = res.listSanPham;
-
                         var contentTable = '';
                         $.each(listSanPham, function(key, value) {
                             contentTable += '<tr class="align-middle">';
@@ -355,10 +346,10 @@
                             contentTable += '<td class="text-nowrap">'+ value.ma_san_pham +'</td>';
                             contentTable += '<td class="text-nowrap">'+ value.ten_san_pham +'</td>';
                             contentTable += '<td class="text-nowrap">'+ value.ten_danh_muc +'</td>';
-                            contentTable += '<td class="text-nowrap">'+ value.don_gia_ban +'</td>';
-                            contentTable += '<td class="text-nowrap">'+ value.don_gia_khuyen_mai +'</td>';
+                            contentTable += '<td class="text-nowrap">'+ formatNumber(value.don_gia_ban) +'</td>';
+                            contentTable += '<td class="text-nowrap">'+ formatNumber(value.don_gia_khuyen_mai) +'</td>';
                             contentTable += '<td class="text-nowrap">';
-                            contentTable += '<img src="+ value.hinh_anh">';
+                            contentTable += '<img  style ="width: 80px" src="'+ value.hinh_anh +'">';
                             contentTable += '</td>';
                             contentTable += '<td class="text-nowrap text-center">';
                             if(value.is_open == 1) {

@@ -137,7 +137,7 @@
                             </div>
                             <div class="modal-footer">
                               <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Close</button>
-                              <button id="updateDanhMuc" class="btn btn-secondary" type="button" data-bs-dismiss="modal">Save changes</button>
+                              <button id="updateDanhMuc" class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cập Nhật Danh Mục</button>
                             </div>
                           </div>
                         </div>
@@ -160,7 +160,7 @@
                             </div>
                             <div class="modal-footer">
                               <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Close</button>
-                              <button id="deleteDanhMuc" class="btn btn-secondary" type="button" data-bs-dismiss="modal">Save changes</button>
+                              <button id="deleteDanhMuc" class="btn btn-secondary" type="button" data-bs-dismiss="modal">Xóa Danh Mục</button>
                             </div>
                           </div>
                         </div>

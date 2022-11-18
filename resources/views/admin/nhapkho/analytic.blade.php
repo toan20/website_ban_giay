@@ -69,7 +69,7 @@ Thống Kê Đơn Hàng Nhập Kho
     const data = {
       labels: labels,
       datasets: [{
-        label: 'Đơn Hàng',
+        label: 'Tổng Tiền',
         backgroundColor: 'rgb(255, 99, 132)',
         borderColor: 'rgb(255, 99, 132)',
         data: data_js,

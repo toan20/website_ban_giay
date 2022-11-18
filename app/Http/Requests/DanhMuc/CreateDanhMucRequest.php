@@ -24,9 +24,9 @@ class CreateDanhMucRequest extends FormRequest
     public function rules()
     {
         return [
-            'ma_danh_muc'       =>  'required|min:5|unique:danh_mucs,ma_danh_muc',
-            'ten_danh_muc'      =>  'required|min:5',
-            'slug_danh_muc'     =>  'required|min:5',
+            'ma_danh_muc'       =>  'required|min:3|unique:danh_mucs,ma_danh_muc',
+            'ten_danh_muc'      =>  'required|min:3',
+            'slug_danh_muc'     =>  'required|min:3',
             'is_open'           =>  'required|boolean',
             'id_danh_muc_cha'   =>  'required',
         ];
