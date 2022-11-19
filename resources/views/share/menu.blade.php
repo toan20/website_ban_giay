@@ -34,6 +34,16 @@
                  <a href="/admin/hoa-don-nhap-kho/thong-ke">Thống kê hóa đơn nhập kho</a>
                 </div>
               </li>
+              <li class="sidebar-main-title">
+                <div>
+                 <a href="/admin/account/index">Quản lý tài khoản admin</a>
+                </div>
+              </li>
+              <li class="sidebar-main-title">
+                <div>
+                 <a href="/admin/logout">Đăng Xuất</a>
+                </div>
+              </li>
         </div>
       </nav>
     </div>

@@ -43,5 +43,20 @@ Route::group(['prefix' => '/admin'], function() {
         Route::get('/thong-ke', [\App\Http\Controllers\HoaDonNhapKhoController::class, 'analytic']);
         Route::post('/thong-ke', [\App\Http\Controllers\HoaDonNhapKhoController::class, 'analyticPost'])->name('postThongKeNhapKho');
     });
+    Route::group(['prefix' => '/account'], function() {
+        Route::get('/index', [\App\Http\Controllers\AdminController::class, 'index']);
+
+        Route::get('/data', [\App\Http\Controllers\AdminController::class, 'getData']);
+        Route::post('/check-email', [\App\Http\Controllers\AdminController::class, 'checkEmail']);
+        Route::post('/index', [\App\Http\Controllers\AdminController::class, 'store']);
+
+        Route::get('/edit/{id}', [\App\Http\Controllers\AdminController::class, 'edit']);
+
+        Route::post('/update', [\App\Http\Controllers\AdminController::class, 'update']);
+    });
+    Route::get('/logout', [\App\Http\Controllers\AdminController::class, 'logout']);
+
 });
+Route::get('/admin/login', [\App\Http\Controllers\AdminController::class, 'viewLogin']);
+Route::post('/admin/login', [\App\Http\Controllers\AdminController::class, 'actionLogin']);
 
