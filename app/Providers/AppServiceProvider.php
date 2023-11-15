@@ -25,22 +25,20 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $menuCha = DanhMuc::where('id_danh_muc_cha', 0)
-                                 ->where('is_open', 1)
-                                 ->get();
-        $menuCon = DanhMuc::where('id_danh_muc_cha', '<>', 0)
-                                 ->where('is_open', 1)
-                                 ->get();
-
-        foreach($menuCha as $key => $value_cha) {
+        $menuCha = DanhMuc::where('id_danh_muc_cha',0)
+                            ->where ('is_open',1)
+                            ->get();
+        $menuCon = DanhMuc::where('id_danh_muc_cha','<>',0)
+                            ->where ('is_open',1)
+                            ->get();
+        foreach($menuCha as $key => $value_cha){
             $value_cha->tmp = $value_cha->id;
-            foreach($menuCon as $key => $value_con) {
-                if($value_con->id_danh_muc_cha == $value_cha->id) {
-                    $value_cha->tmp =  $value_cha->tmp . ', ' . $value_con->id;
+            foreach($menuCon as $key => $value_con){
+                if($value_con->id_danh_muc_cha == $value_cha->id){
+                    $value_cha->tmp = $value_cha->tmp . ',' . $value_con->id;
                 }
             }
         }
-
         view()->share('menuCha', $menuCha);
         view()->share('menuCon', $menuCon);
     }

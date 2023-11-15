@@ -128,7 +128,7 @@ select{background: url(../images/select-icon.png) no-repeat scroll right 50% #ff
 
 /* - Spacer Style  //---------------- */
 .ptb-100{padding-top: 100px; padding-bottom: 100px;}
-.ptb-120{padding-top: 120px; padding-bottom: 120px;}
+.ptb-120{padding-top: 300px; padding-bottom: 120px;}
 .pt-70{padding-top: 70px;}
 .pt-100{padding-top: 100px;}
 .pl-15{padding-left: 15px;}
@@ -301,7 +301,7 @@ _______________________________________________________*/
 
 /*----------- offer Banner Style -------------*/
 .offer-banner {padding-top: 75px;}
-.offer-bg{background-image: url(../images/banner-3.jpg); padding-left: 10px; padding-right: 10px;}
+.offer-bg{background-image: url(https://file.hstatic.net/200000097517/collection/banner1_9287ef0eb8744148a4e775f2c79ba245.jpg); background-size: 100% 100%; padding-left: 10px; padding-right: 10px;}
 .offer-bg .banner-top span {color: #ea2658;}
 
 /*----------- Best Seller Style -------------*/
@@ -374,7 +374,7 @@ label.member-name {font-size: 18px; color: #979797; font-weight: 700;}
 _________________________________________________________*/
 
 /*------- Page Banner Style ----------*/
-.page-banner-in {background: #ebebeb; padding: 86px 65px;}
+.page-banner-in {background-image: url(../images/); background-size: 100% 100%; padding: 86px 65px;}
 .page-banner-title {font-size: 24px; color: #363535; font-weight: 600;}
 .page-banner ul li {display: inline-block; font-size: 18px; color: #363535; padding: 0px 10px; position: relative; font-weight: 500;}
 .page-banner ul li:after {content: ""; position: absolute; top: 3px; width: 1px; height: 18px; background: #363535; right: -1px; transform: rotate(20deg);}

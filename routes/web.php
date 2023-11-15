@@ -28,9 +28,7 @@ Route::group(['prefix' => '/admin'], function() {
     });
     Route::group(['prefix' => '/nhap-kho'], function() {
         Route::get('/index', [\App\Http\Controllers\ChiTietNhapKhoController::class, 'index']);
-
         Route::get('/data', [\App\Http\Controllers\ChiTietNhapKhoController::class, 'getData']);
-
         Route::post('/create', [\App\Http\Controllers\ChiTietNhapKhoController::class, 'store']);
         Route::post('/delete', [\App\Http\Controllers\ChiTietNhapKhoController::class, 'destroy']);
         Route::post('/update', [\App\Http\Controllers\ChiTietNhapKhoController::class, 'update']);
@@ -45,17 +43,13 @@ Route::group(['prefix' => '/admin'], function() {
     });
     Route::group(['prefix' => '/account'], function() {
         Route::get('/index', [\App\Http\Controllers\AdminController::class, 'index']);
-
         Route::get('/data', [\App\Http\Controllers\AdminController::class, 'getData']);
         Route::post('/check-email', [\App\Http\Controllers\AdminController::class, 'checkEmail']);
         Route::post('/index', [\App\Http\Controllers\AdminController::class, 'store']);
-
         Route::get('/edit/{id}', [\App\Http\Controllers\AdminController::class, 'edit']);
-
         Route::post('/update', [\App\Http\Controllers\AdminController::class, 'update']);
     });
     Route::get('/logout', [\App\Http\Controllers\AdminController::class, 'logout']);
-
     Route::group(['prefix' => '/cau-hinh'], function() {
         Route::get('/', [\App\Http\Controllers\ConfigController::class, 'index']);
         Route::post('/', [\App\Http\Controllers\ConfigController::class, 'store']);
@@ -63,6 +57,9 @@ Route::group(['prefix' => '/admin'], function() {
 });
 Route::get('/admin/login', [\App\Http\Controllers\AdminController::class, 'viewLogin']);
 Route::post('/admin/login', [\App\Http\Controllers\AdminController::class, 'actionLogin']);
+Route::get('/admin/donhang', [\App\Http\Controllers\DonHangController::class, 'view']);
+Route::get('/show-don-hang', [\App\Http\Controllers\DonHangController::class, 'showdonhang']);
+Route::get('/tinhtrangtt/{id}', [\App\Http\Controllers\DonHangController::class, 'tinhtrang']);
 
 Route::get('/agent/dangky', [\App\Http\Controllers\AgentController::class, 'register']);
 Route::post('/agent/register', [\App\Http\Controllers\AgentController::class, 'registerAction']);
@@ -72,3 +69,33 @@ Route::get('/agent/logout', [\App\Http\Controllers\AgentController::class, 'logo
 Route::post('/agent/login', [\App\Http\Controllers\AgentController::class, 'loginAction']);
 Route::get('/active/{hash}', [\App\Http\Controllers\AgentController::class, 'active']);
 Route::get('/', [\App\Http\Controllers\TrangChuController::class, 'index']);
+Route::post('/search', [\App\Http\Controllers\SanPhamController::class, 'search']);
+Route::get('/auto-complete', [\App\Http\Controllers\SanPhamController::class, 'autoComplete']);
+Route::get('/san-pham/{id}', [\App\Http\Controllers\TrangChuController::class, 'viewSanPham']);
+Route::get('/danh-muc/{id}', [\App\Http\Controllers\TrangChuController::class, 'viewDanhMuc']);
+
+Route::get('/cart', [\App\Http\Controllers\ChiTietDonHangController::class, 'index']);
+Route::post('/add-to-cart', [\App\Http\Controllers\ChiTietDonHangController::class, 'addToCart']);
+Route::get('/cart/data', [\App\Http\Controllers\ChiTietDonHangController::class, 'dataCart']);
+Route::post('/add-to-cart-update', [\App\Http\Controllers\ChiTietDonHangController::class, 'addToCartUpdate']);
+Route::post('/cart-update', [\App\Http\Controllers\DonHangController::class, 'addDonHangtUpdate']);
+Route::post('/remove-cart', [\App\Http\Controllers\ChiTietDonHangController::class, 'removeCart']);
+Route::post('/create-bill', [\App\Http\Controllers\DonHangController::class, 'store']);
+Route::get('/chi-tiet-bill', [\App\Http\Controllers\DonHangController::class, 'index']);
+Route::get('/chi-tiet-bill/data', [\App\Http\Controllers\DonHangController::class, 'showBill']);
+Route::get('/remove-donhang/{id}', [\App\Http\Controllers\DonHangController::class, 'removeDonHang']);
+Route::get('/tangsoluong/{id}', [\App\Http\Controllers\ChiTietDonHangController::class, 'tangsoluong']);
+
+
+
+//update Inffo
+Route::get('/updateIF/{id}', [\App\Http\Controllers\AgentController::class, 'indexNewinfo' ]);
+Route::post('/updateIF', [\App\Http\Controllers\AgentController::class,  'newInfo']);
+Route::get('/showin4/{id}', [\App\Http\Controllers\AgentController::class,  'showI4']);
+Route::post('/img/', [\App\Http\Controllers\AgentController::class,  'newAvatar']);
+
+
+
+
+
+

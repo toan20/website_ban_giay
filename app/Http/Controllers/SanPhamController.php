@@ -43,7 +43,13 @@ class SanPhamController extends Controller
             return response()->json(['status' => false]);
         }
     }
+    public function search(Request $request)
+    {
+        $sanPham = SanPham::where('ten_san_pham', 'like', '%' . $request->search .'%')->get();
 
+        return view('trangchu.list.listsanpham' , compact('sanPham'));
+        // return response()->json(['dataProduct' => $data]);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -63,7 +69,7 @@ class SanPhamController extends Controller
     public function store(CreateSanPhamRequest $request)
     {
         $data   = $request->all();
-        
+
         SanPham::create($data);
     }
 

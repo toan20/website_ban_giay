@@ -31,6 +31,11 @@
               </li>
               <li class="sidebar-main-title">
                 <div>
+                 <a href="/admin/donhang">Quản lý đơn hàng</a>
+                </div>
+              </li>
+              <li class="sidebar-main-title">
+                <div>
                  <a href="/admin/hoa-don-nhap-kho/thong-ke">Thống kê hóa đơn nhập kho</a>
                 </div>
               </li>

@@ -20,11 +20,9 @@ Quản lý nhập kho
                     <span class="input-group-text">
                         <i class="icofont icofont-ui-zoom-in"></i>
                     </span>
-
                 </div>
             </div>
             <div class="card-body">
-
                 <table class="table table-bordered" id="danhSachSanPham">
                     <thead>
                         <tr class="text-center">

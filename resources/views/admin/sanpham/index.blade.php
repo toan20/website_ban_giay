@@ -211,7 +211,7 @@
     <script src="https://cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>
     <script>
         $(document).ready(function(){
-            CKEDITOR.replace('mo_ta_chi_tiet');
+            // CKEDITOR.replace('mo_ta_chi_tiet');
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -263,7 +263,8 @@
                     'danh_muc_id'         : $('#danh_muc_id').val(),
                     'hinh_anh'            : $('#hinh_anh').val(),
                     'mo_ta_ngan'          : $('#mo_ta_ngan').val(),
-                    'mo_ta_chi_tiet'      : CKEDITOR.instances['mo_ta_chi_tiet'].getData(),
+                    'mo_ta_chi_tiet'          : $('#mo_ta_chi_tiet').val(),
+                    // 'mo_ta_chi_tiet'      : CKEDITOR.instances['mo_ta_chi_tiet'].getData(),
                 };
                 console.log(payload);
                 $.ajax({

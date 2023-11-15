@@ -22,6 +22,7 @@ class Agent extends Authenticatable
         'dia_chi',
         'thanh_pho',
         'is_block',
+        'img',
         'is_email',
         'hash',
     ];

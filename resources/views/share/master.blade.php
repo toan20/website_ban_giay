@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
+
     @include("share.header")
 </head>
 
-<body>
+<body  >
     <div class="tap-top"><i data-feather="chevrons-up"></i></div>
     <div class="page-wrapper compact-wrapper" id="pageWrapper">
         @include('share.top')

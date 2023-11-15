@@ -43,7 +43,7 @@ class ChiTietNhapKhoController extends Controller
         } else {
             return response()->json([
                 'status'  => false,
-                'message' => 'Ê, cấm chơi mất dạy nhé!',
+                'message' => 'lỗi rồi',
             ]);
         }
     }

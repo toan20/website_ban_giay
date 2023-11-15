@@ -38,7 +38,6 @@
                     </div>
                     <div class="card-body">
                         <form class="theme-form" autocomplete="off">
-
                             <div class="form-group">
                                 <label class="col-form-label">Email or Phone</label>
                                 <input autocomplete="off" class="form-control" id="username" name="user_name" type="email" required="" placeholder="Nhập vào email hoặc số điện thoại">

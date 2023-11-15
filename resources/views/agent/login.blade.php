@@ -3,7 +3,7 @@
 	<head>
 	<!-- Basic Page Needs -->
     <meta charset="utf-8">
-    <title>Xpoge</title>
+    <title>GS Shop</title>
 	<!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link type="image/x-icon" href="/assets_trangchu/images/fav-icon.png" rel="icon">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="/assets_trangchu/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/assets_trangchu/css/shoes.css">
     <link rel="stylesheet" type="text/css" href="/assets_trangchu/css/responsive.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @css
@@ -53,7 +53,7 @@
 						        <div class="menu" >
 						            <ul>
 							            <li>
-							                <a href="http://127.0.0.1:8000">Home</a>
+							                <a href="http://127.0.0.1:8000">Trang Chủ</a>
 							            </li>
 							            @foreach ($menuCha as $key=>$value_cha)
                                         <li class="dropdown">
@@ -81,79 +81,15 @@
 					        <div class="search-right">
 					        	<div class="menu-toggle"><span></span></div>
 					        	<div class="search-menu">
-						        	<input type="text" name="search" class="search-input" placeholder="Search text">
-						        	<input type="submit" name="submit" class="search-btn">
-						        	<div class="search-button-i transition">
-						        		<img src="/assets_trangchu/images/search.png" class="position-r transition" alt="search">
-						        	</div>
+                                    <form action="/search" method="post">
+                                        @csrf
+                                        <input type="text" name="search" id="searchSanPham" class="search-input" placeholder="Tên sản phẩm">
+                                        <input type="submit" name="submit" class="search-btn">
+                                        <div class="search-button-i transition">
+                                            <img src="/assets_trangchu/images/search.png" class="position-r transition" alt="search">
+                                        </div>
+                                    </form>
 						        </div>
-						        <ul class="login-cart">
-						        	<li>
-						        		<div class="login-head">
-								        	<a href="login.html"><i class="fa fa-user-o" aria-hidden="true"></i></a>
-								        </div>
-						        	</li>
-						        	<li>
-						        		<div class="cart-menu">
-								        	<div class="cart-icon position-r">
-								        		<img src="/assets_trangchu/images/car-icon-w.png" class="position-r transition" alt="cart">
-								        	</div>
-								        	<div class="cart-dropdown header-link-dropdown">
-												<ul class="cart-list link-dropdown-list">
-													<li>
-													  	<a href="javascript:void(0)" class="close-cart"><i class="fa fa-times-circle"></i></a>
-													    <figure>
-													    	<a href="product-detail.html" class="pull-left">
-													    		<img alt="product" src="/assets_trangchu/images/product-1.jpg">
-													    	</a>
-													      	<figcaption>
-													      		<span>
-													      			<a href="product-detail.html">Men's Full Sleeves Collar Shirt</a>
-													      		</span>
-													        	<p class="cart-price">$14.99</p>
-													        	<div class="product-qty">
-													          		<label>Qty:</label>
-													          		<div class="custom-qty">
-													            		<input type="text" name="qty" maxlength="8" value="1" title="Qty" class="input-text qty" disabled>
-													          		</div>
-													        	</div>
-													      	</figcaption>
-													    </figure>
-													</li>
-													<li>
-														<a class="close-cart"><i class="fa fa-times-circle"></i></a>
-													    <figure>
-													    	<a href="product-detail.html" class="pull-left">
-													    		<img alt="product" src="/assets_trangchu/images/product-2.jpg">
-													    	</a>
-													      	<figcaption>
-													      		<span>
-													      			<a href="product-detail.html">Women's Cape Jacket</a>
-													      		</span>
-													        	<p class="cart-price">$14.99</p>
-													        	<div class="product-qty">
-													          		<label>Qty:</label>
-													          		<div class="custom-qty">
-													            		<input type="text" name="qty" maxlength="8" value="1" title="Qty" class="input-text qty" disabled>
-													          		</div>
-													        	</div>
-													      	</figcaption>
-													    </figure>
-													</li>
-												</ul>
-												<p class="cart-sub-totle">
-													<span class="pull-left">Cart Subtotal</span>
-													<span class="pull-right"><strong class="price-box">$29.98</strong></span>
-												</p>
-												<div class="clearfix"></div>
-												<div class="mt-20">
-													<a href="cart.html" class="btn">Cart</a>
-													<a href="checkout.html" class="btn btn-color right-side">Checkout</a>
-												</div>
-											</div>
-								        </div>
-						        	</li>
-						        </ul>
 					        </div>
 					    </div>
 					</div>
@@ -165,12 +101,12 @@
 					<div class="page-banner-in">
 						<div class="row">
 							<div class="col-xl-6 col-lg-6 col-12">
-								<h1 class="page-banner-title text-uppercase">Login</h1>
+								<h1 class="page-banner-title text-uppercase">Đăng Nhập</h1>
 							</div>
 							<div class="col-xl-6 col-lg-6 col-12">
 								<ul class="right-side">
-									<li><a href="http://127.0.0.1:8000">Home</a></li>
-									<li>Login</li>
+									<li><a href="http://127.0.0.1:8000">Trang chủ</a></li>
+									<li>Đăng Nhập</li>
 								</ul>
 							</div>
 						</div>
@@ -181,37 +117,33 @@
 			<section class="login pt-100">
 				<div class="container">
 					<div class="billing-details">
-						<h2 class="checkout-title text-uppercase text-center mb-30">CUSTOMER LOGIN</h2>
+						<h2 class="checkout-title text-uppercase text-center mb-30">Đăng nhập tài khoản</h2>
 						<form class="checkout-form">
 							<div class="form-group">
-								<label class="form-label">Email address</label>
-								<input type="text" class="form-control" placeholder="Email Address" id="email"required>
+								<label class="form-label">Email</label>
+								<input type="text" class="form-control" placeholder="Nhập email" id="email"required>
 							</div>
 							<div class="form-group">
-								<label class="form-label">Password</label>
-								<input type="password" class="form-control" placeholder="Enter your Password" id="password" required>
+								<label class="form-label">Mật Khẩu</label>
+								<input type="password" class="form-control" placeholder="Nhập mật khẩu" id="password" required>
 							</div>
 							<div class="login-btn-g">
 								<div class="row">
 									<div class="col-6">
-										<div class="check-box">
-											<span>
-								                <input type="checkbox" class="checkbox" id="account" name="Create an Account?">
-								                <label for="account">Remember Me</label>
-								            </span>
-							            </div>
+
 							        </div>
 							        <div class="col-6">
-							            <button name="submit" type="submit" id="login" class="btn btn-color right-side">Log In</button>
+							            <button name="submit" type="submit" id="login" class="btn btn-color right-side">Đăng nhập</button>
 							        </div>
 							    </div>
 					        </div>
 					        <div class="text-center">
-					        	<a title="Forgot Password" class="link forgot-password mtb-20" href="#">Forgot your password?</a>
+					        	<a title="Forgot Password" class="link forgot-password mtb-20" href="#">Bạn quên mật khẩu ?</a>
 					        </div>
 					        <div class="new-account text-center mt-20">
-					        	<span>Don't have an account?</span>
-				                <a class="link" title="Create New Account" href="http://127.0.0.1:8000/agent/dangky">Create New Account</a>
+					        	<span>Bạn chưa có tài khoản ?
+                                </span>
+				                <a class="link" title="Create New Account" href="http://127.0.0.1:8000/agent/dangky">Tạo tài khoản mới</a>
 				            </div>
 						</form>
 					</div>
@@ -348,8 +280,8 @@
                         if(res.status == 2) {
                             toastr.success('Bạn đã login thành công!');
                             setTimeout(function(){
-                                $(location).attr('href','http://127.0.0.1:8000');;
-                            }, 2000);
+                                    $(location).attr('href','http://127.0.0.1:8000/');;
+                                }, 100);
                         } else if(res.status == 1) {
                             toastr.info("Bạn chưa kích hoạt gmail ");
                         } else {
@@ -371,4 +303,23 @@
                                 }, 100);
                 });
     </script>
+@section('js')
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.10/jquery.autocomplete.min.js"></script>
+     <script>
+         $.ajaxSetup({
+             headers: {
+                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+             }
+         });
+         $(document).ready(function () {
+             $("#searchSanPham").keyup(function()
+             {
+                 var search = $("#searchSanPham").val();
+                 console.log(search);
+
+             });
+
+         })
+     </script>
+ @endsection
 </html>

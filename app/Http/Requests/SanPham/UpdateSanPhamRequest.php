@@ -25,9 +25,9 @@ class UpdateSanPhamRequest extends FormRequest
     {
         return [
             'id'                =>      'required|exists:san_phams,id',
-            'ma_san_pham'               => 'required|min:5|unique:san_phams,ma_san_pham',
-            'ten_san_pham'              => 'required|min:5|unique:san_phams,ten_san_pham',
-            'slug_san_pham'             => 'required|min:5|unique:san_phams,slug_san_pham',
+            'ma_san_pham'               => 'required|min:5|',
+            'ten_san_pham'              => 'required|min:5|',
+            'slug_san_pham'             => 'required|min:5|',
             'is_open'                   => 'required|boolean',
             'don_gia_ban'               => 'required|numeric|min:0',
             'don_gia_khuyen_mai'        => 'nullable|numeric|max:' . $this->don_gia_ban,
@@ -48,7 +48,7 @@ class UpdateSanPhamRequest extends FormRequest
             'numeric'       =>  ':attribute không phải là số',
             'max'           =>  ':attribute quá lớn/dài',
             'exists'        =>  ':attribute không tồn tại',
-            'unique'        =>  ':attribute đã tồn tại trong hệ thống',
+            
         ];
     }
 }

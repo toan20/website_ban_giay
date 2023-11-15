@@ -3,7 +3,7 @@
 	<head>
 	<!-- Basic Page Needs -->
     <meta charset="utf-8">
-    <title>Xpoge</title>
+    <title>GS Shop</title>
 
 	<!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="/assets_trangchu/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/assets_trangchu/css/shoes.css">
     <link rel="stylesheet" type="text/css" href="/assets_trangchu/css/responsive.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+	{{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"  />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @css
@@ -21,7 +21,7 @@
 	<body>
 
 		<!-- Start preloader -->
-		<div id="preloader"></div>
+		{{-- <div id="preloader"></div> --}}
 		<!-- End preloader -->
 
 		<!-- Search Screen start -->
@@ -56,8 +56,9 @@
 						        <div class="menu" >
 						            <ul>
 							            <li>
-							                <a href="http://127.0.0.1:8000">Home</a>
+							                <a href="http://127.0.0.1:8000">Trang chủ</a>
 							            </li>
+
 							            @foreach ($menuCha as $key=>$value_cha)
                                         <li class="dropdown">
 							            	<span class="opener plus"></span>
@@ -75,87 +76,28 @@
 							                </div>
 							            </li>
                                         @endforeach
-							            <li>
-							                <a href="contact.html">Contact</a>
-							            </li>
 						            </ul>
 						        </div>
 					        </div>
 					        <div class="search-right">
 					        	<div class="menu-toggle"><span></span></div>
 					        	<div class="search-menu">
-						        	<input type="text" name="search" class="search-input" placeholder="Search text">
-						        	<input type="submit" name="submit" class="search-btn">
-						        	<div class="search-button-i transition">
-						        		<img src="/assets_trangchu/images/search.png" class="position-r transition" alt="search">
-						        	</div>
+                                    <form action="/search" method="post">
+                                        @csrf
+                                        <input type="text" name="search" id="searchSanPham" class="search-input" placeholder="Tên sản phẩm">
+                                        <input type="submit" name="submit" class="search-btn">
+                                        <div class="search-button-i transition">
+                                            <img src="/assets_trangchu/images/search.png" class="position-r transition" alt="search">
+                                        </div>
+                                    </form>
 						        </div>
 						        <ul class="login-cart">
 						        	<li>
 						        		<div class="login-head">
-								        	<a href="login.html"><i class="fa fa-user-o" aria-hidden="true"></i></a>
+								        	<a href="http://127.0.0.1:8000/agent/login"><i class="fa fa-user-o" aria-hidden="true"></i></a>
 								        </div>
 						        	</li>
-						        	<li>
-						        		<div class="cart-menu">
-								        	<div class="cart-icon position-r">
-								        		<img src="/assets_trangchu/images/car-icon-w.png" class="position-r transition" alt="cart">
-								        	</div>
-								        	<div class="cart-dropdown header-link-dropdown">
-												<ul class="cart-list link-dropdown-list">
-													<li>
-													  	<a href="javascript:void(0)" class="close-cart"><i class="fa fa-times-circle"></i></a>
-													    <figure>
-													    	<a href="product-detail.html" class="pull-left">
-													    		<img alt="product" src="/assets_trangchu/images/product-1.jpg">
-													    	</a>
-													      	<figcaption>
-													      		<span>
-													      			<a href="product-detail.html">Men's Full Sleeves Collar Shirt</a>
-													      		</span>
-													        	<p class="cart-price">$14.99</p>
-													        	<div class="product-qty">
-													          		<label>Qty:</label>
-													          		<div class="custom-qty">
-													            		<input type="text" name="qty" maxlength="8" value="1" title="Qty" class="input-text qty" disabled>
-													          		</div>
-													        	</div>
-													      	</figcaption>
-													    </figure>
-													</li>
-													<li>
-														<a class="close-cart"><i class="fa fa-times-circle"></i></a>
-													    <figure>
-													    	<a href="product-detail.html" class="pull-left">
-													    		<img alt="product" src="/assets_trangchu/images/product-2.jpg">
-													    	</a>
-													      	<figcaption>
-													      		<span>
-													      			<a href="product-detail.html">Women's Cape Jacket</a>
-													      		</span>
-													        	<p class="cart-price">$14.99</p>
-													        	<div class="product-qty">
-													          		<label>Qty:</label>
-													          		<div class="custom-qty">
-													            		<input type="text" name="qty" maxlength="8" value="1" title="Qty" class="input-text qty" disabled>
-													          		</div>
-													        	</div>
-													      	</figcaption>
-													    </figure>
-													</li>
-												</ul>
-												<p class="cart-sub-totle">
-													<span class="pull-left">Cart Subtotal</span>
-													<span class="pull-right"><strong class="price-box">$29.98</strong></span>
-												</p>
-												<div class="clearfix"></div>
-												<div class="mt-20">
-													<a href="cart.html" class="btn">Cart</a>
-													<a href="checkout.html" class="btn btn-color right-side">Checkout</a>
-												</div>
-											</div>
-								        </div>
-						        	</li>
+
 						        </ul>
 					        </div>
 					    </div>
@@ -164,65 +106,65 @@
 			</header>
 
 			<section class="page-banner">
-				<div class="container">
+                <div class="container">
 					<div class="page-banner-in">
 						<div class="row">
 							<div class="col-xl-6 col-lg-6 col-12">
-								<h1 class="page-banner-title text-uppercase">REGISTER</h1>
+								<h1 class="page-banner-title text-uppercase">Đăng ký</h1>
 							</div>
 							<div class="col-xl-6 col-lg-6 col-12">
 								<ul class="right-side">
-									<li><a href="http://127.0.0.1:8000">Home</a></li>
-									<li>Register</li>
+									<li><a href="http://127.0.0.1:8000">Trang chủ</a></li>
+									<li>Đăng ký</li>
 								</ul>
 							</div>
 						</div>
 					</div>
-				</div>
+                </div>
 			</section>
 
 			<section class="login pt-100">
 				<div class="container">
 					<div class="billing-details">
-						<h2 class="checkout-title text-uppercase text-center mb-30">CREATE ACCOUNT</h2>
-						<form class="checkout-form">
+						<h2 class="checkout-title text-uppercase text-center mb-30">Tạo tài khoản</h2>
+
 							<div class="form-group">
-								<label class="form-label">First Name</label>
-								<input type="text" class="form-control" placeholder="Name"id="ho_va_ten" required>
+								<label class="form-label">Họ và tên</label>
+								<input type="text" class="form-control" placeholder="Nhập họ và tên"id="ho_va_ten" required>
 							</div>
 							<div class="form-group">
-								<label class="form-label">Phone</label>
-								<input type="phone" class="form-control" placeholder="Phone"id="so_dien_thoai" required>
+								<label class="form-label">Số điện thoại</label>
+								<input type="phone" class="form-control" placeholder="Số điện thoại"id="so_dien_thoai" required>
 							</div>
 							<div class="form-group">
-								<label class="form-label">Email address</label>
-								<input type="email" class="form-control" placeholder="Email Address" id="email"required>
+								<label class="form-label">Email</label>
+								<input type="email" class="form-control" placeholder="Email" id="email"required>
 							</div>
 							<div class="form-group">
-								<label class="form-label">Password</label>
-								<input type="password" class="form-control" placeholder="Enter your Password" id="password"required>
+								<label class="form-label">Mật khẩu</label>
+								<input type="password" class="form-control" placeholder="Nhập vào mật khẩu" id="password"required>
 							</div>
 							<div class="form-group">
-								<label class="form-label">Re-enter Password</label>
-								<input type="password" class="form-control" placeholder="Re-enter Password"id="re_password" required>
+								<label class="form-label">Nhập lại mật khẩu</label>
+								<input type="password" class="form-control" placeholder="Nhập lại mật khẩu"id="re_password" required>
 							</div>
 							<div class="form-group">
 								<label class="form-label">Địa chỉ</label>
-								<input type="text" class="form-control" placeholder="dia chi"id="dia_chi" required>
+								<input type="text" class="form-control" placeholder="Nhập vào địa chỉ"id="dia_chi" required>
 							</div>
 							<div class="login-btn-g">
 								<div class="row">
 
 							        <div class="col-7">
-                                        <button name="submit" type="submit" id="register"class="btn btn-color right-side">Sign up</button>
+                                        <button name="submit" type="submit" id="register"class="btn btn-color right-side">Đăng ký</button>
 							        </div>
 							    </div>
 					        </div>
 					        <div class="new-account text-center mt-20">
-					        	<span>Already have an account with us</span>
-				                <a class="link" title="Create New Account" href="http://127.0.0.1:8000/agent/login">Login Here</a>
+					        	<span>Bạn đã có tài khoản</span>
+				                <a class="link" title="Create New Account" href="http://127.0.0.1:8000/agent/login">Đăng nhập tại đây</a>
 				            </div>
-						</form>
+
 					</div>
 				</div>
 			</section>
@@ -360,23 +302,24 @@
                     data    :   payload,
                     success :   function(res) {
                         // $("#messeger").append('<div class="alert alert-success " role="alert"> Vui lòng kiểm tra Email để kích hoạt tài khoản</div>');
-                        if(res.status){
-                            console.log(res.status);
-                            toastr.success("Bạn đã đăng ký thành công");
-                            alert('chúng tôi đã gửi cho email bạn đăng kí để xác minh tài khoản? vui lòng kiểm tra email?')
-                            //alert('ok nha')
-                            setTimeout(function(){
-                                $(location).attr('href','http://127.0.0.1:8000/agent/login');
-                            }, 500);
-                        }
-                        // $("#messeger").append('<div class="alert alert-success " role="alert"> Vui lòng kiểm tra Email để kích hoạt tài khoản</div>');
                         // if(res.status){
                         //     console.log(res.status);
-                        //     toastr.success("Bạn đã đăng kí tài khoản thành công !!!");
+                        //     toastr.success("Bạn đã đăng ký thành công");
+                        //     alert('chúng tôi đã gửi cho email bạn đăng kí để xác minh tài khoản? vui lòng kiểm tra email?')
+                        //     //alert('ok nha')
                         //     setTimeout(function(){
-                        //         $(location).attr('href','http://127.0.0.1:8000/agent/login');;
-                        //     }, 2000);
+                        //         $(location).attr('href','http://127.0.0.1:8000/agent/login');
+                        //     }, 500);
                         // }
+                        $("#messeger").append('<div class="alert alert-success " role="alert"> Vui lòng kiểm tra Email để kích hoạt tài khoản</div>');
+                        if(res.status){
+                            console.log(res.status);
+                            toastr.success("Bạn đã đăng kí tài khoản thành công !!!");
+                            alert('Vui lòng kiểm tra Email để kích hoạt tài khoản')
+                            setTimeout(function(){
+                                $(location).attr('href','https://accounts.google.com/AccountChooser/signinchooser?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&flowName=GlifWebSignIn&flowEntry=AccountChooser');;
+                            }, 2000);
+                        }
                     },
                     error   :   function(res) {
                         var danh_sach_loi = res.responseJSON.errors;
@@ -389,5 +332,24 @@
             });
         });
     </script>
+    @section('js')
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.10/jquery.autocomplete.min.js"></script>
+     <script>
+         $.ajaxSetup({
+             headers: {
+                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+             }
+         });
+         $(document).ready(function () {
+             $("#searchSanPham").keyup(function()
+             {
+                 var search = $("#searchSanPham").val();
+                 console.log(search);
+
+             });
+
+         })
+     </script>
+ @endsection
 
 </html>

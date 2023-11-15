@@ -20,6 +20,7 @@ class Agents extends Migration
             $table->string('ho_va_ten');
             $table->string('so_dien_thoai');
             $table->string('email');
+            $table->string('img')->nullable();
             $table->string('password');
             $table->string('dia_chi');
             $table->string('thanh_pho');
